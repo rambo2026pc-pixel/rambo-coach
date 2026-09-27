@@ -208,17 +208,15 @@ function editarJogador(i) {
 
   if (!jogador) return;
 
-  document.getElementById("nomeDoJogador").value = jogador.name;
-  document.getElementById("papel do jogador").value = jogador.role;
-  document.getElementById("jogadorMata").value = jogador.kills;
-  document.getElementById("dano do jogador").value = jogador.dmg;
-  document.getElementById("jogadorHs").value = jogador.hs;
-  document.getElementById("Avaliação do jogador").value = jogador.rating;
+  document.getElementById("nomeDoJogador").value = jogador.name || "";
+  document.getElementById("playerRole").value = jogador.role || "";
+  document.getElementById("jogadorMata").value = jogador.kills || "";
+  document.getElementById("dano do jogador").value = jogador.dmg || "";
+  document.getElementById("jogadorHs").value = jogador.hs || "";
+  document.getElementById("Avaliação do jogador").value = jogador.rating || "";
 
   adicionarJogador();
 }
-
-
 function excluirJogador(i) {
   const jogador = players[i];
   if (!jogador) return;
