@@ -171,9 +171,13 @@ function render() {
 
           </div>
 
-        </div>
-      `
-      )
+        <div class="player-actions">
+  <button type="button" onclick="editarJogador(${i})">✏️ Editar</button>
+  <button type="button" onclick="excluirJogador(${i})">🗑️ Excluir</button>
+</div>
+   </div>   
+   `
+   )       
       .join("");
   }
 
