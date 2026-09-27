@@ -204,7 +204,7 @@ function render() {
   }
 }
 function excluirJogador(i) {
-  const jogador = jogadores[i];
+ const jogador = players[i];
 
   if (!jogador) return;
 
@@ -214,7 +214,7 @@ function excluirJogador(i) {
 
   if (!confirmar) return;
 
-  jogadores.splice(i, 1);
+  players.splice(i, 1);
 
   salvarJogadores();
   render();
