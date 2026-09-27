@@ -131,7 +131,7 @@ function render() {
   if (playersGrid) {
     playersGrid.innerHTML = players
       .map(
-        p => `
+        (p, i) => `
         <div class="player-card">
 
           <div class="player-top">
