@@ -203,7 +203,24 @@ function render() {
       .join("");
   }
 }
+function excluirJogador(i) {
+  const jogador = jogadores[i];
 
+  if (!jogador) return;
+
+  const confirmar = confirm(
+    `Tem certeza que deseja excluir ${jogador.nome}?`
+  );
+
+  if (!confirmar) return;
+
+  jogadores.splice(i, 1);
+
+  salvarJogadores();
+  render();
+
+  brinde("Jogador excluído!");
+}
 
 // ===============================
 // TROCAR DE PÁGINA
