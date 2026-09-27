@@ -289,11 +289,77 @@ function addPlayer() {
     hs: "0%"
   };
 
+function addPlayer() {
+  const modal = document.getElementById("playerModal");
+  if (!modal) return;
+
+  modal.classList.add("open");
+
+  setTimeout(() => {
+    document.getElementById("playerName")?.focus();
+  }, 100);
+}
+
+function fecharPlayerModal() {
+  const modal = document.getElementById("playerModal");
+  if (modal) modal.classList.remove("open");
+}
+
+function salvarNovoJogador() {
+  const nome = document.getElementById("playerName").value.trim();
+  const funcao = document.getElementById("playerRole").value;
+
+  const kills =
+    document.getElementById("playerKills").value.trim() || "0.00";
+
+  const dmg =
+    document.getElementById("playerDmg").value.trim() || "0";
+
+  let hs =
+    document.getElementById("playerHs").value.trim() || "0";
+
+  const rating =
+    document.getElementById("playerRating").value.trim() || "0.0";
+
+  if (!nome) {
+    alert("Digite o nick do jogador.");
+    document.getElementById("playerName").focus();
+    return;
+  }
+
+  if (!hs.includes("%")) {
+    hs += "%";
+  }
+
+  const novoJogador = {
+    name: nome.toUpperCase(),
+    role: funcao,
+    rating: rating,
+    kills: kills,
+    dmg: dmg,
+    hs: hs
+  };
+
   players.push(novoJogador);
 
-  // SALVA NO NAVEGADOR
+  // salva no navegador
   salvarJogadores();
 
+  // atualiza os cards
+  render();
+
+  // limpa o formulário
+  document.getElementById("playerName").value = "";
+  document.getElementById("playerKills").value = "";
+  document.getElementById("playerDmg").value = "";
+  document.getElementById("playerHs").value = "";
+  document.getElementById("playerRating").value = "";
+
+  // fecha a janela
+  fecharPlayerModal();
+
+  toast("Jogador adicionado e salvo!");
+}
   // ATUALIZA A TELA
   render();
 
