@@ -343,11 +343,7 @@ function salvarNovoJogador() {
   // ATUALIZA A TELA
   render();
 
-  toast("Jogador adicionado e salvo!");
-}
 
-
-// ===============================
 // OUTROS BOTÕES
 // ===============================
 
