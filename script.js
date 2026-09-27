@@ -218,11 +218,9 @@ function editarJogador(i) {
   adicionarJogador();
 }
 
-  adicionarJogador();
-}
-function excluirJogador(i) {
- const jogador = players[i];
 
+function excluirJogador(i) {
+  const jogador = players[i];
   if (!jogador) return;
 
   const confirmar = confirm(
