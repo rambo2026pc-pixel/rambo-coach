@@ -265,22 +265,7 @@ function toast(msg) {
 // ===============================
 
 
-function addPlayer() {
-  const modal = document.getElementById("playerModal");
 
-  if (!modal) {
-    alert("Modal de jogador não encontrado.");
-    return;
-  }
-  modal.classList.add("open");
-
-  setTimeout(() => {
-    document.getElementById("playerName")?.focus();
-  }, 100);
-}
-
-function fecharPlayerModal() {
-  const modal = document.getElementById("playerModal");
   if (modal) modal.classList.remove("open");
 }
 
