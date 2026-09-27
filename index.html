@@ -75,7 +75,68 @@
     </section>
   </main>
 </div>
-<div id="toast"></div>
+<div id="toast"></div  
+<!-- JANELA ADICIONAR JOGADOR -->
+<div id="playerModal" class="modal">
+  <div class="modal-box">
+
+    <div class="modal-header">
+      <div>
+        <small>NOVO MEMBRO</small>
+        <h2>Adicionar jogador</h2>
+      </div>
+      <button type="button" class="modal-close" onclick="fecharPlayerModal()">×</button>
+    </div>
+
+    <div class="modal-form">
+
+      <label>
+        Nick do jogador
+        <input id="playerName" type="text" placeholder="Ex: RAMBO">
+      </label>
+
+      <label>
+        Função
+        <select id="playerRole">
+          <option value="IGL / Capitão">IGL / Capitão</option>
+          <option value="Rush / Entry">Rush / Entry</option>
+          <option value="Suporte">Suporte</option>
+          <option value="Fragger">Fragger</option>
+          <option value="Flex">Flex</option>
+        </select>
+      </label>
+
+      <div class="modal-grid">
+        <label>
+          K/D
+          <input id="playerKills" type="text" placeholder="Ex: 2.82">
+        </label>
+
+        <label>
+          Dano médio
+          <input id="playerDmg" type="text" placeholder="Ex: 1420">
+        </label>
+
+        <label>
+          HS %
+          <input id="playerHs" type="text" placeholder="Ex: 34">
+        </label>
+
+        <label>
+          Avaliação
+          <input id="playerRating" type="text" placeholder="Ex: 9.4">
+        </label>
+      </div>
+
+    </div>
+
+    <div class="modal-actions">
+      <button type="button" class="modal-cancel" onclick="fecharPlayerModal()">Cancelar</button>
+      <button type="button" class="primary" onclick="salvarNovoJogador()">Adicionar jogador</button>
+    </div>
+
+  </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
