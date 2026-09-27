@@ -264,35 +264,14 @@ function toast(msg) {
 // ADICIONAR JOGADOR
 // ===============================
 
-function addPlayer() {
-
-  const nome = prompt("Nick do novo jogador:");
-
-  if (!nome) return;
-
-  const funcao =
-    prompt("Função do jogador:", "A definir") ||
-    "A definir";
-
-  const novoJogador = {
-
-    name: nome.toUpperCase(),
-
-    role: funcao,
-
-    rating: "0.0",
-
-    kills: "0.00",
-
-    dmg: "0",
-
-    hs: "0%"
-  };
 
 function addPlayer() {
   const modal = document.getElementById("playerModal");
-  if (!modal) return;
 
+  if (!modal) {
+    alert("Modal de jogador não encontrado.");
+    return;
+  }
   modal.classList.add("open");
 
   setTimeout(() => {
