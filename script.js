@@ -203,6 +203,13 @@ function render() {
       .join("");
   }
 }
+function editarJogador(i) {
+  const jogador = players[i];
+
+  if (!jogador) return;
+
+  alert("Vamos editar o jogador: " + jogador.name);
+}
 function excluirJogador(i) {
  const jogador = players[i];
 
