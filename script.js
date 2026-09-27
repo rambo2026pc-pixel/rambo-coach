@@ -208,7 +208,14 @@ function editarJogador(i) {
 
   if (!jogador) return;
 
-  alert("Vamos editar o jogador: " + jogador.name);
+  document.getElementById("Nome do jogador").value = jogador.name;
+  document.getElementById("playerRole").value = jogador.role;
+  document.getElementById("jogadorMata").value = jogador.kills;
+  document.getElementById("dano do jogador").value = jogador.dmg;
+  document.getElementById("jogadorHs").value = jogador.hs;
+  document.getElementById("classificação do jogador").value = jogador.rating;
+
+  adicionarJogador();
 }
 function excluirJogador(i) {
  const jogador = players[i];
